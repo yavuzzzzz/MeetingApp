@@ -11,7 +11,6 @@
 		public string PasswordHash { get; set; }
 		public string ProfilePicturePath { get; set; }
 
-		// Navigation property
 		public ICollection<Meeting> Meetings { get; set; }
 	}
 }

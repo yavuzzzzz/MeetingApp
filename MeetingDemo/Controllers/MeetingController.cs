@@ -16,14 +16,14 @@ public class MeetingController : ControllerBase
 		_context = context;
 	}
 
-	// GET: api/Meeting
+	
 	[HttpGet]
 	public async Task<ActionResult<IEnumerable<Meeting>>> GetMeetings()
 	{
 		return await _context.Meetings.Include(m => m.User).ToListAsync();
 	}
 
-	// GET: api/Meeting/5
+	
 	[HttpGet("{id}")]
 	public async Task<ActionResult<Meeting>> GetMeeting(int id)
 	{
@@ -37,7 +37,7 @@ public class MeetingController : ControllerBase
 		return meeting;
 	}
 
-	// PUT: api/Meeting/5
+
 	[HttpPut("{id}")]
 	public async Task<IActionResult> PutMeeting(int id, Meeting meeting)
 	{
@@ -67,7 +67,7 @@ public class MeetingController : ControllerBase
 		return NoContent();
 	}
 
-	// POST:
+
 	[HttpPost]
 	public async Task<ActionResult<Meeting>> PostMeeting(Meeting meeting)
 	{
@@ -77,7 +77,7 @@ public class MeetingController : ControllerBase
 		return CreatedAtAction("GetMeeting", new { id = meeting.Id }, meeting);
 	}
 
-	// DELETE:
+	
 	[HttpDelete("{id}")]
 	public async Task<IActionResult> DeleteMeeting(int id)
 	{

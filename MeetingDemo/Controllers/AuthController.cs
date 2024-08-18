@@ -54,7 +54,6 @@ public class AuthController : ControllerBase
 			}
 		}
 
-		// Kullanıcı doğrulandı
 		return Ok("Login successful.");
 	}
 }

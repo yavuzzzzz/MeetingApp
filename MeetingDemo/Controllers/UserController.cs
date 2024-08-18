@@ -16,14 +16,12 @@ public class UserController : ControllerBase
 		_context = context;
 	}
 
-	// GET: api/User
 	[HttpGet]
 	public async Task<ActionResult<IEnumerable<User>>> GetUsers()
 	{
 		return await _context.Users.ToListAsync();
 	}
 
-	// GET: api/User/5
 	[HttpGet("{id}")]
 	public async Task<ActionResult<User>> GetUser(int id)
 	{
@@ -37,7 +35,6 @@ public class UserController : ControllerBase
 		return user;
 	}
 
-	// PUT: api/User/5
 	[HttpPut("{id}")]
 	public async Task<IActionResult> PutUser(int id, User user)
 	{
@@ -67,7 +64,6 @@ public class UserController : ControllerBase
 		return NoContent();
 	}
 
-	// POST: api/User
 	[HttpPost]
 	public async Task<ActionResult<User>> PostUser(User user)
 	{
@@ -77,7 +73,6 @@ public class UserController : ControllerBase
 		return CreatedAtAction("GetUser", new { id = user.Id }, user);
 	}
 
-	// DELETE: api/User/5
 	[HttpDelete("{id}")]
 	public async Task<IActionResult> DeleteUser(int id)
 	{

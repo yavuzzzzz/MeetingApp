@@ -10,10 +10,8 @@
 		public string Description { get; set; }
 		public string Documents { get; set; }
 
-		// Foreign Key
 		public int UserId { get; set; }
 
-		// Navigation property
 		public User User { get; set; } 
 	}
 }
